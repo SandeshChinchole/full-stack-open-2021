@@ -1,25 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const Button = (props) => {
+  return(
+    <div>
+      <button onClick = {props.handleClick}>{props.text}</button>
     </div>
-  );
+  )
+}
+
+const App = () => {
+
+  const anecdotes = [
+    'If it hurts, do it more often',
+    'Adding manpower to a late software project makes it later!',
+    'The first 90 percent of the code accounts for the first 90 percent of the development time...The remaining 10 percent of the code accounts for the other 90 percent of the development time.',
+    'Any fool can write code that a computer can understand. Good programmers write code that humans can understand.',
+    'Premature optimization is the root of all evil.',
+    'Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.'
+  ]
+
+  const [selected, setSelected] = useState(0);
+  const [votes, setVotes] = useState(new Array(anecdotes.length).fill(0));
+
+  const handleRandomClick = () => {
+    const random = Math.floor(Math.random() * anecdotes.length);
+    setSelected(random);
+  }
+
+  const handleVoteClick = () => {
+    const vote = [...votes];
+    vote[selected] += 1;
+    setVotes(vote);
+  }
+
+  const mostVotes = () => {
+    let max = 0;
+    let indexMax = 0;
+    votes.forEach((item, index) => {
+      if(item > max){
+        max = item;
+        indexMax = index;
+      }
+    });
+    return indexMax;
+  }
+
+  return(
+    <div>
+      <h1>Anecdote of the day</h1>
+      <p>{anecdotes[selected]}</p>
+      <p>has {votes[selected]} votes</p>
+      <Button handleClick = {handleVoteClick} text = "vote"/>
+      <Button handleClick = {handleRandomClick} text = "next anecdote" />
+      <h1>Anecdotes with the most votes is</h1>
+      {votes[mostVotes()] === 0 ?
+        <>
+          <p>There no votes</p>
+        </>
+        :
+        <>
+          <p>{anecdotes[mostVotes()]}</p>
+          <p>{votes[mostVotes()]}</p>
+        </>  
+      }
+    </div>
+  )
 }
 
 export default App;
