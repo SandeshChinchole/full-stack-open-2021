@@ -1,6 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 
+const Item = () => {
+  return(
+    <div>
+      <p>Item #</p>
+      <p>Important</p>
+    </div>
+  )
+}
+
 function App() {
   return (
     <div className="App">
