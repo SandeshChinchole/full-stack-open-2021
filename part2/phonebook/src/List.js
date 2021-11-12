@@ -10,6 +10,15 @@ const Item = () => {
   )
 }
 
+const ConsoleView = () => {
+  return(
+    <div>
+      <p>Item #</p>
+      <p>Important</p>
+    </div>
+  )
+}
+
 function App() {
   return (
     <div className="App">
