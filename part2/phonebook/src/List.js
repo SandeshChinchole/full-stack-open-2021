@@ -19,6 +19,15 @@ const ConsoleView = () => {
   )
 }
 
+const Comp2 = () => {
+  return(
+    <div>
+      <p>Item #</p>
+      <p>Important</p>
+    </div>
+  )
+}
+
 function App() {
   return (
     <div className="App">
