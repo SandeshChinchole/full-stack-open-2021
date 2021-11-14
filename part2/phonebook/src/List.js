@@ -13,8 +13,8 @@ const Item = () => {
 const ConsoleView = () => {
   return(
     <div>
-      <p>Item #</p>
-      <p>Important</p>
+      <p>View</p>
+      <p>component text</p>
     </div>
   )
 }
