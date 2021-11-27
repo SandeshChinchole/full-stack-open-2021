@@ -7,6 +7,7 @@ const App = () => {
       <ul>
         <li>Name:</li>
         <li>Phone Number:</li>
+        <li>Email:</li>
       </ul>
     </div>
   )
