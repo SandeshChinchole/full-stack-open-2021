@@ -9,6 +9,7 @@ const App = () => {
         <li>Phone Number:</li>
         <li>Email:</li>
         <li>Address:</li>
+        <li>Home:</li>
       </ul>
     </div>
   )
