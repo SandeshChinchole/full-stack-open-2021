@@ -10,6 +10,7 @@ const App = () => {
         <li>Email:</li>
         <li>Address:</li>
         <li>Home:</li>
+        <li>Company</li>
       </ul>
     </div>
   )
