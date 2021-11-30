@@ -11,6 +11,7 @@ const App = () => {
         <li>Address:</li>
         <li>Home:</li>
         <li>Company</li>
+        <li>Fax</li>
       </ul>
     </div>
   )
