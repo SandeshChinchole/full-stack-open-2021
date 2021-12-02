@@ -12,6 +12,7 @@ const App = () => {
         <li>Home:</li>
         <li>Company</li>
         <li>Fax</li>
+        <li>Nickname</li>
       </ul>
     </div>
   )
